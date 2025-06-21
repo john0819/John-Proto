@@ -1,0 +1,8 @@
+version: v1
+name: buf.build/john-proto/proto
+lint:
+  use:
+    - DEFAULT
+breaking:
+  use:
+    - FILE 

@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/your-org/proto/gen/user/v1;userv1";
+
+// User service definition
+service UserService {
+  // Get user by ID
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+  
+  // Create a new user
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+  
+  // List users
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+}
+
+// User message
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  int64 created_at = 4;
+  int64 updated_at = 5;
+}
+
+// GetUserRequest
+message GetUserRequest {
+  string id = 1;
+}
+
+// GetUserResponse
+message GetUserResponse {
+  User user = 1;
+}
+
+// CreateUserRequest
+message CreateUserRequest {
+  string name = 1;
+  string email = 2;
+}
+
+// CreateUserResponse
+message CreateUserResponse {
+  User user = 1;
+}
+
+// ListUsersRequest
+message ListUsersRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+}
+
+// ListUsersResponse
+message ListUsersResponse {
+  repeated User users = 1;
+  string next_page_token = 2;
+}
