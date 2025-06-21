@@ -2,7 +2,7 @@ version: v1
 managed:
   enabled: true
   go_package_prefix:
-    default: github.com/john0819/proto/gen
+    default: github.com/john0819/John-Proto/gen
 plugins:
   # Go
   - plugin: buf.build/protocolbuffers/go
