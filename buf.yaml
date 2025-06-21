@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/john-proto/proto
+name: buf.build/john0819/proto
 lint:
   use:
     - DEFAULT
